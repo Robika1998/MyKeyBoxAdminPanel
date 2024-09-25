@@ -1,10 +1,17 @@
 import { Layout, Menu } from "antd";
 import { ReactNode, useState } from "react";
-import { UserOutlined, HomeOutlined, SettingOutlined } from "@ant-design/icons";
+import {
+  LockOutlined,
+  HomeOutlined,
+  SettingOutlined,
+  FileAddOutlined,
+  UnorderedListOutlined,
+} from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 
 const logo = "../src/assets/logo/logo-light.png";
 const { Header, Content, Footer, Sider } = Layout;
+const { SubMenu } = Menu;
 
 export default function LayOut({ children }: { children: ReactNode }) {
   const nav = useNavigate();
@@ -35,9 +42,23 @@ export default function LayOut({ children }: { children: ReactNode }) {
           <Menu.Item key="/" icon={<HomeOutlined />}>
             Home
           </Menu.Item>
-          <Menu.Item key="/about" icon={<UserOutlined />}>
-            Profile
-          </Menu.Item>
+
+          <SubMenu key="locker" icon={<LockOutlined />} title="Locker">
+            <Menu.Item
+              key="/locker/add"
+              onClick={() => nav("/locker/add")}
+              icon={<FileAddOutlined />}
+            >
+              Add Locker
+            </Menu.Item>
+            <Menu.Item
+              key="/locker/list"
+              onClick={() => nav("/locker/list")}
+              icon={<UnorderedListOutlined />}
+            >
+              Locker List
+            </Menu.Item>
+          </SubMenu>
           <Menu.Item key="/settings" icon={<SettingOutlined />}>
             Settings
           </Menu.Item>
