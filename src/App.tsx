@@ -1,10 +1,10 @@
+import { useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import Home from "./pages/Home/Home";
 import LayOut from "./LayOut";
-import Login from "./pages/Login/Login";
+import Home from "./pages/Home/Home";
 import AddLocker from "./pages/Locker/AddLocker";
 import LockerList from "./pages/Locker/LockerList";
-import { useState } from "react";
+import Login from "./pages/Login/Login";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
