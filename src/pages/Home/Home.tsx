@@ -41,7 +41,7 @@ export default function Home() {
   return (
     <div>
       <h1>Hello</h1>
-      <Button label="Click Me" onClick={handleClick} />
+      <Button color="blue" label="Click Me" onClick={handleClick} />
       <Search onSearch={handleSearch} placeholder="Type your query..." />
 
       <div>

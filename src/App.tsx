@@ -5,13 +5,22 @@ import Home from "./pages/Home/Home";
 import AddLocker from "./pages/Locker/AddLocker";
 import LockerList from "./pages/Locker/LockerList";
 import Login from "./pages/Login/Login";
+import Loading from "./components/Loading/Loading";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleLogin = () => {
-    setIsAuthenticated(true);
+    setLoading(true);
+
+    setTimeout(() => {
+      setIsAuthenticated(true);
+      setLoading(false);
+    }, 1000);
   };
+
+  if (loading) return <Loading />;
 
   return (
     <Routes>
